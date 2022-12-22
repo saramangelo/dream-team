@@ -75,91 +75,6 @@ function askPromptQuestions() {
 // separate files for intern class, engineer class, manager class, employee class
 // employee class is parent, all others extend from it
 
-// function to prompt intern questions
-function promptInternQuestions() {
-  // 4 questions: intern’s name, ID, email, and school
-  const internQuestions = [
-    {
-      type: "input",
-      message: "What is your first name?",
-      name: "firstName",
-    },
-
-    {
-      type: "input",
-      message: "What is your last name?",
-      name: "lastName",
-    },
-
-    {
-      type: "input",
-      message: "What is your ID?",
-      name: "id",
-    },
-
-    {
-      type: "input",
-      message: "What is your email address?",
-      name: "email",
-    },
-
-    {
-      type: "input",
-      message: "What is your school?",
-      name: "school",
-    },
-  ];
-  inquirer.prompt(internQuestions).then((answers) => {
-    const intern = new Intern(
-      answers.firstName,
-      answers.lastName,
-      answers.id,
-      answers.email,
-      answers.school,
-    );
-    employees.push(intern);
-    askPromptQuestions();
-  });
-}
-// function to prompt engineer questions
-function promptEngineerQuestions() {
-  // name, ID, email, and GitHub username
-  const engineerQuestions = [
-    {
-      type: "input",
-      message: "What is your first name?",
-      name: "firstName",
-    },
-
-    {
-      type: "input",
-      message: "What is your last name?",
-      name: "lastName",
-    },
-
-    {
-      type: "input",
-      message: "What is your email address?",
-      name: "email",
-    },
-
-    {
-      type: "input",
-      message: "What is your Github username?",
-      name: "github",
-    },
-  ];
-  inquirer.prompt(engineerQuestions).then((answers) => {
-    const engineer = new Engineer(
-      answers.firstName,
-      answers.lastName,
-      answers.email,
-      answers.github,
-    );
-    employees.push(engineer);
-    askPromptQuestions();
-  });
-}
 // function to prompt manager questions
 function promptManagerQuestions() {
   // name, employee ID, email address, and office number
@@ -200,9 +115,94 @@ function promptManagerQuestions() {
       answers.lastName,
       answers.id,
       answers.email,
-      answers.office,
+      answers.office
     );
     employees.push(manager);
+    askPromptQuestions();
+  });
+}
+// function to prompt engineer questions
+function promptEngineerQuestions() {
+  // name, ID, email, and GitHub username
+  const engineerQuestions = [
+    {
+      type: "input",
+      message: "What is your first name?",
+      name: "firstName",
+    },
+
+    {
+      type: "input",
+      message: "What is your last name?",
+      name: "lastName",
+    },
+
+    {
+      type: "input",
+      message: "What is your email address?",
+      name: "email",
+    },
+
+    {
+      type: "input",
+      message: "What is your Github username?",
+      name: "github",
+    },
+  ];
+  inquirer.prompt(engineerQuestions).then((answers) => {
+    const engineer = new Engineer(
+      answers.firstName,
+      answers.lastName,
+      answers.email,
+      answers.github
+    );
+    employees.push(engineer);
+    askPromptQuestions();
+  });
+}
+// function to prompt intern questions
+function promptInternQuestions() {
+  // 4 questions: intern’s name, ID, email, and school
+  const internQuestions = [
+    {
+      type: "input",
+      message: "What is your first name?",
+      name: "firstName",
+    },
+
+    {
+      type: "input",
+      message: "What is your last name?",
+      name: "lastName",
+    },
+
+    {
+      type: "input",
+      message: "What is your ID?",
+      name: "id",
+    },
+
+    {
+      type: "input",
+      message: "What is your email address?",
+      name: "email",
+    },
+
+    {
+      type: "input",
+      message: "What is your school?",
+      name: "school",
+    },
+  ];
+  inquirer.prompt(internQuestions).then((answers) => {
+    const intern = new Intern(
+      answers.firstName,
+      answers.lastName,
+      answers.id,
+      answers.email,
+      answers.school
+    );
+    employees.push(intern);
     askPromptQuestions();
   });
 }
