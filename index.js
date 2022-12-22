@@ -113,7 +113,9 @@ function promptInternQuestions() {
     const intern = new Intern(
       answers.firstName,
       answers.lastName,
-      answers.school
+      answers.id,
+      answers.email,
+      answers.school,
     );
     employees.push(intern);
     askPromptQuestions();
@@ -151,7 +153,8 @@ function promptEngineerQuestions() {
     const engineer = new Engineer(
       answers.firstName,
       answers.lastName,
-      answers.github
+      answers.email,
+      answers.github,
     );
     employees.push(engineer);
     askPromptQuestions();
@@ -195,7 +198,9 @@ function promptManagerQuestions() {
     const manager = new Manager(
       answers.firstName,
       answers.lastName,
-      answers.office
+      answers.id,
+      answers.email,
+      answers.office,
     );
     employees.push(manager);
     askPromptQuestions();
