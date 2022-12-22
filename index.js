@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
-const Intern = require("file that has Intern class");
+const Intern = require("./lib/Intern");
 
 // every time I make a class, push data into this array
 const employees = [];
