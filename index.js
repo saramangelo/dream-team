@@ -1,32 +1,12 @@
 const inquirer = require("inquirer");
-// require classes (files)
+// require classes (files) main class will be employee class
 const Intern = require("file that has Intern class");
 
 // every time I make a class, push data into this array
 const employees = [];
 // array of questions to prompt
-const mainQuestions = [
-  {
-    type: "list",
-    message: "Which kind of employee would you like to add",
-    choices: ["Intern", "Engineer", "Manager", "Exit"],
-    name: "employeeType",
-  },
-];
-function generateHtml(data) {
-  const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    ${data}
-</body>
-</html>`;
-}
+
+
 
 // function to write html file
 function writeToFile(fileName, data) {
@@ -49,6 +29,60 @@ function writeToFile(fileName, data) {
   );
 }
 
+const managerQuestions = [
+  {
+    type: "input",
+    message: "What is your first name?",
+    name: "firstName",
+  },
+
+  {
+    type: "input",
+    message: "What is your last name?",
+    name: "lastName",
+  },
+
+  {
+    type: "input",
+    message: "What is your ID?",
+    name: "id",
+  },
+
+  {
+    type: "input",
+    message: "What is your email address?",
+    name: "email",
+  },
+
+  {
+    type: "input",
+    message: "What is your office number?",
+    name: "office",
+  },
+];
+
+function init(){
+  inquirer.prompt(managerQuestions).then((answers) => {
+    const manager = new Manager(
+      answers.firstName,
+      answers.lastName,
+      answers.id,
+      answers.email,
+      answers.office,
+    );
+    employees.push(manager);
+    return askPromptQuestions();
+  });
+}
+
+const mainQuestions = [
+  {
+    type: "list",
+    message: "Which kind of employee would you like to add",
+    choices: ["Intern", "Engineer", "Exit"],
+    name: "employeeType",
+  },
+];
 // function to ask prompt questions for intern, engineer, manager based on answers of main question
 function askPromptQuestions() {
   inquirer
@@ -63,8 +97,9 @@ function askPromptQuestions() {
       if (answers.employeeType === "Engineer") {
         promptEngineerQuestions();
       }
-      if (answers.employeeType === "Manager") {
-        promptManagerQuestions();
+      if (answers.employeeType === "Exit"){
+        return generateHtml();
+        // end program when select exit
       }
     });
 }
@@ -76,51 +111,11 @@ function askPromptQuestions() {
 // employee class is parent, all others extend from it
 
 // function to prompt manager questions
-function promptManagerQuestions() {
+
   // name, employee ID, email address, and office number
-  const managerQuestions = [
-    {
-      type: "input",
-      message: "What is your first name?",
-      name: "firstName",
-    },
+  
+  
 
-    {
-      type: "input",
-      message: "What is your last name?",
-      name: "lastName",
-    },
-
-    {
-      type: "input",
-      message: "What is your ID?",
-      name: "id",
-    },
-
-    {
-      type: "input",
-      message: "What is your email address?",
-      name: "email",
-    },
-
-    {
-      type: "input",
-      message: "What is your office number?",
-      name: "office",
-    },
-  ];
-  inquirer.prompt(managerQuestions).then((answers) => {
-    const manager = new Manager(
-      answers.firstName,
-      answers.lastName,
-      answers.id,
-      answers.email,
-      answers.office
-    );
-    employees.push(manager);
-    askPromptQuestions();
-  });
-}
 // function to prompt engineer questions
 function promptEngineerQuestions() {
   // name, ID, email, and GitHub username
@@ -136,7 +131,11 @@ function promptEngineerQuestions() {
       message: "What is your last name?",
       name: "lastName",
     },
-
+    {
+      type: "input",
+      message: "What is your ID?",
+      name: "id",
+    },
     {
       type: "input",
       message: "What is your email address?",
@@ -157,7 +156,7 @@ function promptEngineerQuestions() {
       answers.github
     );
     employees.push(engineer);
-    askPromptQuestions();
+    return askPromptQuestions();
   });
 }
 // function to prompt intern questions
@@ -200,10 +199,10 @@ function promptInternQuestions() {
       answers.lastName,
       answers.id,
       answers.email,
-      answers.school
+      answers.school,
     );
     employees.push(intern);
-    askPromptQuestions();
+      return askPromptQuestions();
   });
 }
 
@@ -213,4 +212,4 @@ function exit() {
 }
 
 // function to ask prompt questions for intern, engineer, manager
-askPromptQuestions();
+init();
