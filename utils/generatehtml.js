@@ -1,6 +1,49 @@
 
 // data is the array of employees
 function generateHtml(data) {
+    let htmlMarkup = '';
+  for (let i = 0; i < data.length; i++) {
+    // getRole is a method I'll create in classes that will return the type of employee
+    if (data[i].getRole() === "Intern") {
+      htmlMarkup += `<div class="card" style="width: 18rem;">
+   
+      <div class="card-body">
+        <h5 class="card-title">${data[i].getRole()}</h5>
+        <h6>${data[i].getName()}</h6>
+        <p class="card-text">${data[i].getId()}</p>
+        <p class="card-text">${data[i].getEmail()}</p>
+        <p class="card-text">${data[i].getSchool()}</p>
+     
+      </div>
+    </div>`;
+    }
+    if (data[i].getRole() === "Engineer") {
+      htmlMarkup += `<div class="card" style="width: 18rem;">
+   
+      <div class="card-body">
+        <h5 class="card-title">${data[i].getRole()}</h5>
+        <h6>${data[i].getName()}</h6>
+        <p class="card-text">${data[i].getId()}</p>
+        <p class="card-text">${data[i].getEmail()}</p>
+        <p class="card-text">${data[i].getGithub()}</p>
+     
+      </div>
+    </div>`;
+    }
+    if (data[i].getRole() === "Manager") {
+      htmlMarkup += `<div class="card" style="width: 18rem;">
+   
+      <div class="card-body">
+        <h5 class="card-title">${data[i].getRole()}</h5>
+        <h6>${data[i].getName()}</h6>
+        <p class="card-text">${data[i].getId()}</p>
+        <p class="card-text">${data[i].getEmail()}</p>
+        <p class="card-text">${data[i].getOffice()}</p>
+     
+      </div>
+    </div>`;
+    }
+  }
     const html = `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -8,11 +51,15 @@ function generateHtml(data) {
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
   </head>
   <body>
-      ${data}
+  
+      ${htmlMarkup}
   </body>
   </html>`;
+  return html;
   }
 
   module.exports = generateHtml;
