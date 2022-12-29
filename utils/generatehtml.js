@@ -9,11 +9,11 @@ function generateHtml(data) {
       htmlMarkup += `<div class="card" style="width: 18rem;">
    
       <div class="card-body">
-        <h5 class="card-title">${data[i].getRole()}</h5>
+        <h5 class="card-title">Title: ${data[i].getRole()}</h5>
         <h6>${data[i].getName()}</h6>
-        <p class="card-text">${data[i].getId()}</p>
-        <p class="card-text">${data[i].getEmail()}</p>
-        <p class="card-text">${data[i].getSchool()}</p>
+        <p class="card-text">ID: ${data[i].getId()}</p>
+        <p class="card-text">Email: ${data[i].getEmail()}</p>
+        <p class="card-text">School: ${data[i].getSchool()}</p>
      
       </div>
     </div>`;
@@ -22,11 +22,11 @@ function generateHtml(data) {
       htmlMarkup += `<div class="card" style="width: 18rem;">
    
       <div class="card-body">
-        <h5 class="card-title">${data[i].getRole()}</h5>
+        <h5 class="card-title">Title: ${data[i].getRole()}</h5>
         <h6>${data[i].getName()}</h6>
-        <p class="card-text">${data[i].getId()}</p>
-        <p class="card-text">${data[i].getEmail()}</p>
-        <p class="card-text">${data[i].getGithub()}</p>
+        <p class="card-text">ID: ${data[i].getId()}</p>
+        <p class="card-text">Email: ${data[i].getEmail()}</p>
+        <p class="card-text">Github: ${data[i].getGithub()}</p>
      
       </div>
     </div>`;
@@ -35,11 +35,11 @@ function generateHtml(data) {
       htmlMarkup += `<div class="card" style="width: 18rem;">
    
       <div class="card-body">
-        <h5 class="card-title">${data[i].getRole()}</h5>
+        <h5 class="card-title">Title: ${data[i].getRole()}</h5>
         <h6>${data[i].getName()}</h6>
-        <p class="card-text">${data[i].getId()}</p>
-        <p class="card-text">${data[i].getEmail()}</p>
-        <p class="card-text">${data[i].getOffice()}</p>
+        <p class="card-text">ID: ${data[i].getId()}</p>
+        <p class="card-text">Email: ${data[i].getEmail()}</p>
+        <p class="card-text">Office number: ${data[i].getOffice()}</p>
      
       </div>
     </div>`;
