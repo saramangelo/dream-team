@@ -64,8 +64,7 @@ const managerQuestions = [
 function init() {
   inquirer.prompt(managerQuestions).then((answers) => {
     const manager = new Manager(
-      answers.firstName,
-      answers.lastName,
+      answers.firstName + " " + answers.lastName,
       answers.id,
       answers.email,
       answers.office
