@@ -26,7 +26,8 @@ function generateHtml(data) {
         <h6>${data[i].getName()}</h6>
         <p class="card-text">ID: ${data[i].getId()}</p>
         <p class="card-text">Email: ${data[i].getEmail()}</p>
-        <p class="card-text">Github: ${data[i].getGithub()}</p>
+        <a class="card-text" target="_blank"
+        href="https://github.com/${data[i].getGithub()}"></a>
      
       </div>
     </div>`;
@@ -38,7 +39,7 @@ function generateHtml(data) {
         <h5 class="card-title">Title: ${data[i].getRole()}</h5>
         <h6>${data[i].getName()}</h6>
         <p class="card-text">ID: ${data[i].getId()}</p>
-        <p class="card-text">Email: ${data[i].getEmail()}</p>
+        <a class="card-text" href='mailto:${data[i].getEmail()}'></a>
         <p class="card-text">Office number: ${data[i].getOffice()}</p>
      
       </div>
