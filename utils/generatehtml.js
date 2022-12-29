@@ -24,7 +24,7 @@ function generateHtml(data) {
         <h5 class="card-title">${data[i].getRole()}</h5>
         <h6>${data[i].getName()}</h6>
         <p class="card-text">${data[i].getId()}</p>
-        <p class="card-text">${data[i].getEmail()}</p>
+        <a class="card-text">href="mailto:${data[i].getEmail()}"</a>
         <p class="card-text">${data[i].getGithub()}</p>
      
       </div>

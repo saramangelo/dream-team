@@ -157,29 +157,29 @@ function promptEngineerQuestions() {
   const engineerQuestions = [
     {
       type: "input",
-      message: "What is your first name?",
+      message: "What is your engineer's first name?",
       name: "firstName",
     },
 
     {
       type: "input",
-      message: "What is your last name?",
+      message: "What is your engineer's last name?",
       name: "lastName",
     },
     {
       type: "input",
-      message: "What is your ID?",
+      message: "What is your engineer's ID?",
       name: "id",
     },
     {
       type: "input",
-      message: "What is your email address?",
+      message: "What is your engineer's email address?",
       name: "email",
     },
 
     {
       type: "input",
-      message: "What is your Github username?",
+      message: "What is your engineer's Github username?",
       name: "github",
     },
   ];
