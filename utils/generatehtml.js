@@ -6,46 +6,55 @@ function generateHtml(data) {
   for (let i = 0; i < data.length; i++) {
     // getRole is a method I'll create in classes that will return the type of employee
     if (data[i].getRole() === "Intern") {
-      htmlMarkup += `<div class="card" style="width: 18rem;">
-   
-      <div class="card-body">
-        <h5 class="card-title">${data[i].getRole()}</h5>
-        <h6>${data[i].getName()}</h6>
-        <p class="card-text">ID: ${data[i].getId()}</p>
-        <a class="card-text" href='mailto:${data[i].getEmail()}'>${data[i].getEmail()}</a>
-        <p class="card-text">School: ${data[i].getSchool()}</p>
-     
-      </div>
-    </div>`;
+      htmlMarkup += `
+      
+      <div class="container text-center"
+      <div class="card row">
+  <div class="card-body col">
+    <h5 class="card-title">${data[i].getRole()}</h5>
+    <h6>${data[i].getName()}</h6>
+    <p class="card-text">ID: ${data[i].getId()}</p>
+    <p class="card-text">School: ${data[i].getSchool()}</p>
+    <a href='mailto:${data[i].getEmail()}' class="btn btn-primary">${data[i].getEmail()}</a>
+  </div>
+</div>
+</div>
+`;
     }
     if (data[i].getRole() === "Engineer") {
-      htmlMarkup += `<div class="card" style="width: 18rem;">
-   
-      <div class="card-body">
-        <h5 class="card-title">${data[i].getRole()}</h5>
-        <h6>${data[i].getName()}</h6>
-        <p class="card-text">ID: ${data[i].getId()}</p>
-        <a class="card-text" href='mailto:${data[i].getEmail()}'>${data[i].getEmail()}</a>
-        <a class="card-text" target="_blank"
-        href="https://github.com/${data[i].getGithub()}">Github</a>
-     
-      </div>
-    </div>`;
+      htmlMarkup += `
+
+      <div class="container text-center"
+      <div class="card row">
+  <div class="card-body col">
+    <h5 class="card-title">${data[i].getRole()}</h5>
+    <h6>${data[i].getName()}</h6>
+    <p class="card-text">ID: ${data[i].getId()}</p>
+    <a href='mailto:${data[i].getEmail()}' class="btn btn-primary">${data[i].getEmail()}</a>
+    <a class="card-text" target="_blank"
+    href="https://github.com/${data[i].getGithub()}">Github</a> 
+  </div>
+</div>
+</div>
+`;
     }
     if (data[i].getRole() === "Manager") {
-      htmlMarkup += `<div class="card" style="width: 18rem;">
-   
-      <div class="card-body">
-        <h5 class="card-title">${data[i].getRole()}</h5>
-        <h6>${data[i].getName()}</h6>
-        <p class="card-text">ID: ${data[i].getId()}</p>
-        <a class="card-text" href='mailto:${data[i].getEmail()}'>${data[i].getEmail()}</a>
-        <p class="card-text">Office number: ${data[i].getOffice()}</p>
-     
-      </div>
-    </div>`;
+      htmlMarkup += `
+      
+      <div class="container text-center"
+      <div class="card row">
+  <div class="card-body col">
+    <h5 class="card-title">${data[i].getRole()}</h5>
+    <h6>${data[i].getName()}</h6>
+    <p class="card-text">ID: ${data[i].getId()}</p>
+    <a href='mailto:${data[i].getEmail()}' class="btn btn-primary">${data[i].getEmail()}</a>
+    <p class="card-text">Office number: ${data[i].getOffice()}</p>
+  </div>
+</div>
+</div>`;
     }
   }
+
     const html = `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -57,7 +66,6 @@ function generateHtml(data) {
 
   </head>
   <body>
-  
       ${htmlMarkup}
   </body>
   </html>`;
