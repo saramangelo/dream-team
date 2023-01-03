@@ -27,7 +27,8 @@ In the command-line, questions will prompt for information regarding employee in
 Bootstrap:  https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
 
 Inquirer NPM package
-  
+
+Bootstrap Icons NPM package
   
 ## License
 MIT
