@@ -70,7 +70,7 @@ function generateHtml(data) {
         i
       ].getEmail()}</a>
       </p>
-    <p class="card-text">Office number: ${data[i].getOffice()}</p>
+    <p class="card-text">Office number: ${data[i].getOfficeNumber()}</p>
   </div>
 </div>
 </div>
