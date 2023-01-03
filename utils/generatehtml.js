@@ -8,8 +8,10 @@ function generateHtml(data) {
     if (data[i].getRole() === "Intern") {
       htmlMarkup += `
       
-      <div class="container text-center"
-      <div class="card row">
+
+
+      <div class="col-4">
+      <div class="card">
   <div class="card-body col">
     <h5 class="card-title">${data[i].getRole()}</h5>
     <h6>${data[i].getName()}</h6>
@@ -17,32 +19,37 @@ function generateHtml(data) {
     <p class="card-text">School: ${data[i].getSchool()}</p>
     <a href='mailto:${data[i].getEmail()}' class="btn btn-primary">${data[i].getEmail()}</a>
   </div>
+  </div>
 </div>
-</div>
+
 `;
     }
     if (data[i].getRole() === "Engineer") {
       htmlMarkup += `
 
-      <div class="container text-center"
-      <div class="card row">
+
+      <div class="col-4">
+      <div class="card">
   <div class="card-body col">
     <h5 class="card-title">${data[i].getRole()}</h5>
     <h6>${data[i].getName()}</h6>
     <p class="card-text">ID: ${data[i].getId()}</p>
     <a href='mailto:${data[i].getEmail()}' class="btn btn-primary">${data[i].getEmail()}</a>
+    <br>
     <a class="card-text" target="_blank"
     href="https://github.com/${data[i].getGithub()}">Github</a> 
   </div>
 </div>
 </div>
+
 `;
     }
     if (data[i].getRole() === "Manager") {
       htmlMarkup += `
       
-      <div class="container text-center"
-      <div class="card row">
+
+      <div class="col-4">
+      <div class="card">
   <div class="card-body col">
     <h5 class="card-title">${data[i].getRole()}</h5>
     <h6>${data[i].getName()}</h6>
@@ -51,7 +58,9 @@ function generateHtml(data) {
     <p class="card-text">Office number: ${data[i].getOffice()}</p>
   </div>
 </div>
-</div>`;
+</div>
+
+`;
     }
   }
 
@@ -66,7 +75,11 @@ function generateHtml(data) {
 
   </head>
   <body>
+  <div class="container">
+  <div class="row">
       ${htmlMarkup}
+      </div>
+      <div>
   </body>
   </html>`;
   return html;
