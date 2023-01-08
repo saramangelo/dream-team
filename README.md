@@ -4,6 +4,8 @@
 ## Description 
 Dream-team is a Node.js command-line application that takes in information about employees on a software engineering team, ultimately then generating an HTML webpage that displays summaries for each entry.
 
+
+
 ## Link to Walk-through Video
 [Link to video](https://drive.google.com/file/d/1qc7LI9Pj9BVRlysoKzma6Xcr5L7FUdDR/view)
   
