@@ -52,5 +52,5 @@ See tests folder (Employee, Engineer, Intern, Manager)
 
 ## Questions
 Reach me at the links below with additional questions:
-- Github username: saramangelo
+- Github: https://github.com/saramangelo
 - Email: saramangelo@gmail.com
