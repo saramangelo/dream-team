@@ -9,16 +9,20 @@ Dream-team is a Node.js command-line application that takes in information about
 ## Link to Walk-through Video
 [Link to video](https://drive.google.com/file/d/1qc7LI9Pj9BVRlysoKzma6Xcr5L7FUdDR/view)
   
-## Table of Contents (Optional)
+## Table of Contents
     
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Features](#features)
-- [How to Contribute](#how-to-contribute)
-- [Tests](#tests)
-- [Questions](#questions)
+- [dream-team](#dream-team)
+  - [Description](#description)
+  - [Link to Walk-through Video](#link-to-walk-through-video)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Features](#features)
+  - [How to Contribute](#how-to-contribute)
+  - [Tests](#tests)
+  - [Questions](#questions)
   
 ## Installation
 In the command-line, "node index.js" must be typed. 
